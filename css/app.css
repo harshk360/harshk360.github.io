@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font:normal 75% Arial, Helvetica, sans-serif;
+
+}
+
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+
+/* ---- particles.js container ---- */
+
+#stars {
+    position: absolute; height:100%;
+    width:100%;
+    background: url("/assets/backg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#particles-js {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+    background-position: 50% 50%;
+    z-index: 3;
+}
+#particles-js-two {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+    background-position: 50% 50%;
+    z-index: 2;
+}
+
+#particles-js-background {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+    background-position: 50% 50%;
+    z-index: 1;
+}
+
+#banner{
+    padding-top:15%;
+    z-index: 4;
+}
+
+#hobby{
+    color: #ffffff;
+}
