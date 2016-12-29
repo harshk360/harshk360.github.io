@@ -136,6 +136,15 @@ var pJS = function(tag_id, params){
 
     var pJS = this.pJS;
 
+    pJS.texts = [["Machine Learning", 0], ["NLP", 0], ["Linguistics", 0], ["Algorithms", 0],
+                 ["Python", 1], ["Django", 1], ["Flask", 1], ["AWS", 1], ["Heroku", 1], ["InfluxDB", 1], ["Grafana", 1],
+                 ["Virtual Reality", 2], ["Web Dev", 2],
+                 ["Overwatch", 3], ["Doctor Who", 3], ["Harry Potter", 3]]
+
+    pJS.text_colors = ['#9FCC2E', '#2D882D', '#FC7A57', '#FCD757']
+    pJS.prefixes = ["I study", "I use", "I do", "I enjoy"]
+    pJS.count = 0
+
     /* params settings */
     if(params){
         Object.deepExtend(pJS, params);
@@ -240,6 +249,12 @@ var pJS = function(tag_id, params){
 
     pJS.fn.particle = function(color, opacity, position){
 
+        /* text */
+        this.prefix = pJS.prefixes[pJS.texts[pJS.count % pJS.texts.length][1]];
+        this.text = pJS.texts[pJS.count % pJS.texts.length][0];
+        this.chosen_color_index = pJS.texts[pJS.count % pJS.texts.length][1];
+        pJS.count += 1;
+
         /* size */
         this.radius = (pJS.particles.size.random ? Math.random() : 1) * pJS.particles.size.value;
         if(pJS.particles.size.anim.enable){
@@ -291,11 +306,9 @@ var pJS = function(tag_id, params){
 
         }
         else if(color.value == 'random'){
-            this.color.rgb = {
-                r: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
-                g: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
-                b: (Math.floor(Math.random() * (255 - 0 + 1)) + 0)
-            }
+            var chosen_color = pJS.text_colors[this.chosen_color_index];
+            this.color.rgb = hexToRgb(chosen_color);
+            this.color.value = chosen_color;
         }
         else if(typeof(color.value) == 'string'){
             this.color = color;
@@ -846,6 +859,24 @@ var pJS = function(tag_id, params){
 
                     }
 
+                    /* Print particle text */
+                    var hobby_prefix = $("#prefix");
+                    var hobby_suffix = $("#suffix");
+                    var hobby_header_suffix = hobby_suffix.text();
+                    var hobby_header_prefix = hobby_prefix.text();
+                    console.log([hobby_header_suffix, p.text]);
+                    if ((hobby_header_prefix) != p.prefix) {
+                        hobby_prefix.fadeOut(function() {
+                            $(this).text(p.prefix).fadeIn();
+                        });
+                    }
+                    if ((hobby_header_suffix) != p.text){
+                        hobby_suffix.css('color', '#000');
+                        hobby_suffix.fadeOut(function() {
+                            $(this).text(p.text).fadeIn();
+                            hobby_suffix.css('color', p.color.value);
+                        });
+                    }
                 }
 
             }else{
@@ -1032,7 +1063,6 @@ var pJS = function(tag_id, params){
 
             /* draw a line between the cursor and the particle if the distance between them is under the config distance */
             if(dist_mouse <= pJS.interactivity.modes.grab.distance){
-
                 var opacity_line = pJS.interactivity.modes.grab.line_linked.opacity - (dist_mouse / (1/pJS.interactivity.modes.grab.line_linked.opacity)) / pJS.interactivity.modes.grab.distance;
 
                 if(opacity_line > 0){
@@ -1051,7 +1081,6 @@ var pJS = function(tag_id, params){
                     pJS.canvas.ctx.closePath();
 
                 }
-
             }
 
         }

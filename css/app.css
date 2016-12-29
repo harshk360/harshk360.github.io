@@ -4,6 +4,14 @@ body {
 
 }
 
+h1, h2  {
+    color: #000;
+}
+
+h2{
+    display:inline;
+}
+
 
 canvas {
     display: block;
@@ -16,7 +24,6 @@ canvas {
 #stars {
     position: absolute; height:100%;
     width:100%;
-    background: url("/assets/backg.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

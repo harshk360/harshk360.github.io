@@ -1,20 +1,20 @@
 {
   "particles": {
     "number": {
-      "value": 15,
+      "value": 17,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#B0171F"
+      "value": "#9FCC2E"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#B0171F"
+        "color": "#9FCC2E"
       },
       "polygon": {
         "nb_sides": 5
@@ -26,11 +26,11 @@
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.7,
       "random": false,
       "anim": {
         "enable": true,
-        "speed": 3,
+        "speed": 0.5,
         "opacity_min": 0.1,
         "sync": false
       }
@@ -40,7 +40,7 @@
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 10,
+        "speed": 2,
         "size_min": 0.1,
         "sync": false
       }
@@ -55,10 +55,10 @@
     "move": {
       "enable": true,
       "speed": 1,
-      "direction": "none",
+      "direction": "bottom",
       "random": true,
       "straight": false,
-      "out_mode": "out",
+      "out_mode": "bounce",
       "bounce": false,
       "attract": {
         "enable": false,
