@@ -305,7 +305,7 @@ var pJS = function(tag_id, params){
             }
 
         }
-        else if(color.value == 'random'){
+        else if(color.value == 'class_based'){
             var chosen_color = pJS.text_colors[this.chosen_color_index];
             this.color.rgb = hexToRgb(chosen_color);
             this.color.value = chosen_color;
@@ -819,9 +819,6 @@ var pJS = function(tag_id, params){
 
                 if(ratio >= 0 && pJS.interactivity.status == 'mousemove'){
 
-                    var box = document.getElementById("hobby");
-                    var tex = box.getElementsByTagName("h2");
-
                     /* size */
                     if(pJS.interactivity.modes.bubble.size != pJS.particles.size.value){
 
@@ -858,25 +855,7 @@ var pJS = function(tag_id, params){
                         }
 
                     }
-
-                    /* Print particle text */
-                    var hobby_prefix = $("#prefix");
-                    var hobby_suffix = $("#suffix");
-                    var hobby_header_suffix = hobby_suffix.text();
-                    var hobby_header_prefix = hobby_prefix.text();
-                    console.log([hobby_header_suffix, p.text]);
-                    if ((hobby_header_prefix) != p.prefix) {
-                        hobby_prefix.fadeOut(function() {
-                            $(this).text(p.prefix).fadeIn();
-                        });
-                    }
-                    if ((hobby_header_suffix) != p.text){
-                        hobby_suffix.css('color', '#000');
-                        hobby_suffix.fadeOut(function() {
-                            $(this).text(p.text).fadeIn();
-                            hobby_suffix.css('color', p.color.value);
-                        });
-                    }
+                    changeHeader(p);
                 }
 
             }else{
@@ -1477,6 +1456,27 @@ window.cancelRequestAnimFrame = ( function() {
         window.msCancelRequestAnimationFrame     ||
         clearTimeout
 } )();
+
+function changeHeader(p){
+    /* Change header text text */
+    var hobby_prefix = $("#prefix");
+    var hobby_suffix = $("#suffix");
+    var hobby_header_suffix = hobby_suffix.text();
+    var hobby_header_prefix = hobby_prefix.text();
+    console.log([hobby_header_suffix, p.text]);
+    if ((hobby_header_prefix) != p.prefix) {
+        hobby_prefix.fadeOut(function() {
+            $(this).text(p.prefix).fadeIn();
+        });
+    }
+    if ((hobby_header_suffix) != p.text){
+        hobby_suffix.css('color', '#000');
+        hobby_suffix.fadeOut(function() {
+            $(this).text(p.text).fadeIn();
+            hobby_suffix.css('color', p.color.value);
+        });
+    }
+}
 
 function hexToRgb(hex){
     // By Tim Down - http://stackoverflow.com/a/5624139/3493650

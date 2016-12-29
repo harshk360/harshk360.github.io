@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "random"
+      "value": "class_based"
     },
     "shape": {
       "type": "circle",
