@@ -136,13 +136,13 @@ var pJS = function(tag_id, params){
 
     var pJS = this.pJS;
 
-    pJS.texts = [["Machine Learning", 0], ["NLP", 0], ["Linguistics", 0], ["Algorithms", 0],
+    pJS.texts = [["Machine Learning", 0], ["NLP", 0], ["Linguistics", 0], ["Algorithms", 0], ["Discrete Maths", 0],
                  ["Python", 1], ["Django", 1], ["Flask", 1], ["AWS", 1], ["Heroku", 1], ["InfluxDB", 1], ["Grafana", 1],
-                 ["Virtual Reality", 2], ["Web Dev", 2],
-                 ["Overwatch", 3], ["Doctor Who", 3], ["Harry Potter", 3]]
+                 ["Virtual Reality", 2], ["Web Dev", 2], ["Data Pipelining", 2],
+                 ["Overwatch", 3], ["Doctor Who", 3], ["Harry Potter", 3]];
 
-    pJS.text_colors = ['#9FCC2E', '#2D882D', '#FC7A57', '#FCD757']
-    pJS.prefixes = ["I study", "I use", "I do", "I enjoy"]
+    pJS.text_colors = ['#9FCC2E', '#2D882D', '#FC7A57', '#FCD757'];
+    pJS.prefixes = ["I study", "I use", "I do", "I enjoy"];
     pJS.count = 0
 
     /* params settings */
@@ -1463,7 +1463,6 @@ function changeHeader(p){
     var hobby_suffix = $("#suffix");
     var hobby_header_suffix = hobby_suffix.text();
     var hobby_header_prefix = hobby_prefix.text();
-    console.log([hobby_header_suffix, p.text]);
     if ((hobby_header_prefix) != p.prefix) {
         hobby_prefix.fadeOut(function() {
             $(this).text(p.prefix).fadeIn();
