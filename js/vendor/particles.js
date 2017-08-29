@@ -137,9 +137,11 @@ var pJS = function(tag_id, params){
     var pJS = this.pJS;
 
     pJS.texts = [["Machine Learning", 0], ["NLP", 0], ["Linguistics", 0], ["Algorithms", 0], ["Discrete Maths", 0],
-                 ["Python", 1], ["Django", 1], ["Flask", 1], ["AWS", 1], ["Heroku", 1], ["InfluxDB", 1], ["Grafana", 1],
-                 ["Virtual Reality", 2], ["Web Dev", 2], ["Data Pipelining", 2],
-                 ["Overwatch", 3], ["Doctor Who", 3], ["Harry Potter", 3]];
+                 ["Python", 1], ["Java", 1], ["C++", 1], ["Spark", 1], ["Django", 1], ["Flask", 1], ["Hystrix", 1],
+                 ["Dropwizard", 1], ["AWS", 1], ["Heroku", 1], ["InfluxDB", 1], ["Grafana", 1],
+                 ["Backend Web Dev", 2], ["Data Pipelining", 2], ["Data Analysis", 2], ["Virtual Reality", 2],
+                 ["DevOps ", 2],
+                 ["Overwatch", 3], ["Doctor Who", 3], ["Harry Potter", 3], ["Horror", 3], ["Game of Thrones", 3]];
 
     pJS.text_colors = ['#9FCC2E', '#2D882D', '#FC7A57', '#FCD757'];
     pJS.prefixes = ["I study", "I use", "I do", "I enjoy"];
