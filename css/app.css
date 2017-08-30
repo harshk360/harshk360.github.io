@@ -1,10 +1,9 @@
 body {
     margin: 0;
     font:normal 75% Arial, Helvetica, sans-serif;
-
 }
 
-h1, h2, h4, h6  {
+h1, h2, h6  {
     color: #000;
     position:relative;
     z-index:1000;
@@ -18,9 +17,6 @@ canvas {
     display: block;
     vertical-align: bottom;
 }
-
-
-/* ---- particles.js container ---- */
 
 #stars {
     position: absolute; height:100%;
@@ -47,24 +43,49 @@ canvas {
 #hobby{
     color: #ffffff;
 }
+@media (max-width: 767px) {
+    h1 {
+        font-size: 32px;
+    }
 
+    #social  {
+        position: relative;
+        bottom: -45%;
+        text-align: center;
+        font-size: 3em;
+        overflow: hidden;
+        z-index:1000;
+    }
 
-#social {
-    position: relative;
-    bottom: -25%;
-    text-align: center;
-    font-size: 3em;
-    overflow: hidden;
-    z-index:1000;
+    #hint {
+        position: relative;
+        bottom: -55%;
+        text-align: center;
+        font-size: 3em;
+        overflow: hidden;
+    }
 }
 
-#hint {
-    position: relative;
-    bottom: -30%;
-    text-align: center;
-    font-size: 3em;
-    overflow: hidden;
+@media (min-width: 768px) {
+    #social {
+        position: relative;
+        bottom: -20%;
+        text-align: center;
+        font-size: 3em;
+        overflow: hidden;
+        z-index:1000;
+    }
+
+    #hint {
+        position: relative;
+        bottom: -30%;
+        text-align: center;
+        font-size: 3em;
+        overflow: hidden;
+    }
 }
+
+
 
 #social a{
     padding: 1%;
